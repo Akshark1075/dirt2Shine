@@ -255,6 +255,7 @@ res.redirect("/");
 app.post("/placeorder",isLoggedIn,function(req,res){
 	console.log("hitting post")
 	
+
 	User.findOne( { username:req.user.username },function(err,user){
 		if(err){
 			console.log(err);
@@ -326,7 +327,8 @@ app.post("/placeorder",isLoggedIn,function(req,res){
 							else{
 							alert("Your order has been booked successfully")
 							 req.flash("info","Your Order has been placed successfully. We will reach out to you soon!");
-	res.redirect("/"); 
+							 res.send(JSON.stringify({url:"/"})); 
+	
 							}
 					
 		
@@ -348,8 +350,7 @@ app.post("/placeorder",isLoggedIn,function(req,res){
 				}
 		
 		});
-		console.log(res)
-		res.redirect("/"); 
+		res.send(JSON.stringify({url:"/"})); 
 	
 });
 app.get("/about",function(req,res){
@@ -368,7 +369,7 @@ app.get("/about",function(req,res){
 // 		});
 	
 // });
-app.listen(3000,function(){console.log("starting server");});
+app.listen(process.env.PORT||3000,function(){console.log("starting server");});
 
 function isLoggedIn(req,res,next){
 	if(req.isAuthenticated()){

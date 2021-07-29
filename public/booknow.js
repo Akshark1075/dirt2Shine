@@ -218,7 +218,7 @@ if(selected.length==selectionLimit){
 // 					$("#description").value($("descr").text());
 // 					$("#washlocation").value($("#address").value());
 // 	})
-			
+	alert("Thank you for booking. You will be receiving an email confirmation shortly...*This is just a demo application. Not for realtime use*")		
 	fetch("/placeorder", {
     method: 'POST', 
 
@@ -226,12 +226,13 @@ headers: {'Content-Type': 'application/json','Accept': 'application/json'},
 
     body: JSON.stringify(data)
    })
-   
- //  .then(function(resp){
-// 	return resp.json()
-// 	}).then(function(data){
-// 		window.location.href =data;
-// 	})
+  .then(function(resp){
+	return resp.json()
+	}).then(function(data){
+	
+		console.log(data)
+		window.location.href =data.url;
+	})
 }
 			  else{
 				  alert("Please select the number of slots specified")
