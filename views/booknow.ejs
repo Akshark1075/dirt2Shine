@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	   
+      <link href="https://fonts.googleapis.com/css?family=Girassol&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Merriweather:900i&display=swap" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href='/floatingicon.css'>
+      <link rel="stylesheet" type="text/css" href='/bubblybutton.css'>
+      <link rel="stylesheet" type="text/css" href="/booknow.css">
+      <link rel="stylesheet" type="text/css" href='/index.css'>
+	  
+    
+
+    
+            
+      <title>D!rt2Shine</title>
+   </head>
+   <body>
+      <div id="loading" class="card ">
+		  <style>
+			#loading{
+				background-image: url('/images/background1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+	border:0px;
+			}
+		</style>
+         <h1 id="loadingh1"> <span id="dirt">D!rt</span><span id="two">2</span><span id="shine">Shine</span></h1>
+         <p id="loadingp">
+            Don't get caught riding dirty
+         </p>
+      </div>
+      <script>
+         var loader=setInterval(function(){ 
+         if($("#dirt").text()=="D!rt"){
+         	$("#dirt").text("Dirt");
+         	$("#shine").text("Sh!ne");
+         }
+         	else{
+         		$("#dirt").text("D!rt");
+         		$("#shine").text("Shine");
+         	}
+         
+         
+         }, 500);
+      </script>
+      <div id="main"style="display:none;">
+      <div  >
+         <nav class="navbar navbar-expand-lg navbar-dark customnav">
+            <a class="navbar-brand" href="/">
+               <h1> <span id="dirt">D!rt</span><span id="two">2</span><span id="shine">Shine</span></h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+               <div class="navbar-nav">
+                  <a class="nav-item nav-link" href="/">Home</a>
+				   <% if(!user){  %>
+                  <a class="nav-item nav-link" href="/signup">Signup</a>
+                  <a class="nav-item nav-link" href="/login">Login</a>
+                  <%}%>
+              
+                  <% if(user){  %>
+                  <a class="nav-item nav-link" href="/changePassword">Change Password</a>
+                  <a class="nav-item nav-link" href="/logout">Logout</a>
+                  <%}%>
+				   <a class="nav-item nav-link" href="/about">About Us</a>
+               </div>
+            </div>
+         </nav>
+      </div>
+      <%if(success && success.length>0){%>
+      <div class="alert alert-dark " role="alert" style="margin:0 0;border-radius:0px;" >			 
+         <%= success %>		
+      </div>
+      <%}%>
+      <%if(error&& error.length>0){%>
+      <div class="alert alert-danger" role="alert"style="margin:0 0;border-radius:0px;">		 
+         <%= error %>			
+      </div>
+      <%}%>
+      <%if(info&& info.length>0){%>
+      <div class="alert alert-primary" role="alert" style="margin:0 0;border-radius:0px;">   
+         <%= info %>			 
+      </div>
+      <%}%>
+		  
+      <div class="card">
+		  
+		  
+      <div class="card-body" style="text-align:center;">
+         <%if(type=="Gold"){%>
+         <h1 class="card-title" name="Gold" style="color:#e8b923;">Gold</h1>
+         <%}else if(type=="Silver"){%>
+         <h1 class="card-title" name="Silver" style="color:#C0C0C0;">Silver</h1>
+         <%}else if(type=="Platinum"){%>
+         <h1 class="card-title" name="Platinum" style="color:#e5e4e2;">Platinum</h1>
+        
+		  <%}else if(type=="Diamond"){%>
+         <h1 class="card-title" name="Diamond"style="color:#B9F2FF;">Diamond</h1>
+         <%}%>
+      </div>
+      <div class="card-body container" style="text-align:center;">
+         <%if(type=="Gold"){%>
+         <h5 class="card-text" id="descr">This package includes 8 washes per month which will be done twice a week. </h5>
+		  <br>
+		  <h5 class="card-text">
+			  Please select two slots per week.
+		  </h5>
+         <%}else if(type=="Silver"){%>
+         <p class="card-text"id="descr">This package includes 4 washes per month which will be done once in a week</p>
+		   <br>
+		  <h5 class="card-text">
+			  Please select one slot per week.
+		  </h5>
+         <%}else if(type=="Platinum"){%>
+         <p class="card-text"id="descr">This package includes 12 washes per month which will be done thrice a week</p>
+		   <br>
+		  <h5 class="card-text">
+			  Please select three slots per week.
+		  </h5>
+         
+		  <%}else if(type=="Diamond"){%>
+         <p class="card-text"id="descr">Suitable for customers who need a car wash on a daily basis </p>
+		   <br>
+		  <!-- <h5 class="card-text">
+			  Please select three slots per week.
+		  </h5> -->
+         <%}%>
+        <br>
+		   <div class="card-body" id="weekdiv">
+			   <div id="sun"class="day btn btn-secondary">SUN</div>	
+			  <div id="mon" class="day btn btn-secondary">MON</div>
+			  <div id="tue"class="day btn btn-secondary">TUE</div>
+			  <div id="wed"class="day btn btn-secondary">WED</div>
+			  <div id="thu"class="day btn btn-secondary">THU</div>		  
+			  <div id="fri"class="day btn btn-secondary">FRI</div>	
+			  <div id="sat"class="day btn btn-secondary">SAT</div>	
+			  
+		  </div>
+		  
+		  <div>
+			   <h6 class="card-text">*Slot dates/ timings can be altered by contacting us*</h6>
+			  <br>
+			<div  id="radiobtns">
+	<div class="tier">
+		
+<input class="switch" id="checka" type="checkbox"checked><label for="checka">&nbsp;</label>
+<span class="card-text">Hatchback/Sedan </span>
+		
+				</div>
+				<div class="tier">
+					
+			
+	<input class="switch" id="checkb" type="checkbox"><label for="checkb">&nbsp;</label>
+<span class="card-text">SUV/Compact SUV</span>
+</div>
+ 	</div>             
+			  <h5 class="card-text">Please verify/edit the address for the wash</h5>
+			  <br>
+			<textarea id="address" name="address" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 80px;width:80%;border-radius:5px;text-align:center; "><%= user.address %></textarea> 
+			  <br><br>
+			  <div style="display:flex;justify-content:space-around;">
+				  <h2>Total Cost: 		  
+			  </h2>
+			  <h2 style="color:#00FF7F;">
+					Rs:<span id="cost"> 0</span>
+				</h2>
+			  </div>
+			    <span id="hiddenName" style="display:none;"><%=user.username%></span>
+			   <form method="POST" action="https://api.razorpay.com/v1/checkout/embedded" id="rpayForm">  
+				   <input type="hidden" name="key_id" id="key_id" >  
+				   <input type="hidden" name="order_id" id="order_id" > 
+				   <input type="hidden" name="name" value="D!rt2Shine"> 
+				   <input type="hidden" name="description" id="description" > 
+				   <input type="hidden" name="image" value="https://cdn.razorpay.com/logos/BUVwvgaqVByGp2_large.png"> 
+				   <input type="hidden" name="prefill[name]" value='<%=user.username %>'> 
+				   <input type="hidden" name="prefill[contact]" value='<%=user.mobile %>'> 
+				   <input type="hidden" name="prefill[email]" value='<%=user.email%>'> 
+				   <input type="hidden" name="notes[address]" id="washlocation" >  
+				   <input type="hidden" name="callback_url" value="/placeorder">
+				   <input type="hidden" name="cancel_url" value="/booknow"+<%=type%>>
+				   <button class=" btn btn-lg btn-primary" type="submit" id="bookbtn">Book Now</button>
+			  </form>
+			
+			
+		  </div>
+		 
+		  
+		  
+          <!-- <div class="slidepanels row card-body">
+            
+            \\ <div id="left" class="col-sm-3 btn btn-outline-secondary active"></div>
+            <div id="pre"class="col-sm-1 "><i class="fa fa-hand-o-left " aria-hidden="true"></i></div>
+            <div id="center"class="col-sm-3 btn btn-outline-light active"></div>
+            <div id="next"class="col-sm-1 "><i class="fa fa-hand-o-right" aria-hidden="true"></i></div>
+            <div id="right" class="col-sm-3  btn btn-outline-secondary active"></div>
+            
+            </div>
+		   <div class="card-body" id="slotsdiv">
+			   <div class="row" id="earlymorndiv">
+				   <div id="earlymornicon" class="slots">
+					   
+					    <img src="/icons/earlymorn.png"  alt="sunrise icon"> 
+					   
+				   </div>
+			   <div style="display:flex;justify-content:space-center;">
+				   
+				   
+			  <div id="FIRSTSLOT" class="slots"><button class="btn btn-outline-danger">05 AM - 06 AM</button></div>
+			   <div id="SECONDSLOT"class="slots"><button class="btn btn-outline-success">06 AM - 07 AM</button></div>
+			   <div id="THIRDSLOT"class="slots"><button class="btn btn-outline-danger">07 AM - 08 AM</button></div>
+				   <div id="filler"class="slots" style="visibility:hidden;"><button class="btn btn-outline-danger">07 AM - 08 AM</button></div>
+				   </div>
+				   </div> 
+			    <div class="row" id="morndiv">
+					 <div id="mornicon" class="slots">
+					   
+					    <img src="/icons/morn.png"  alt="morning icon">  -->
+					   
+				   <!-- </div>
+			   <div style="display:flex;justify-content:center;">
+			   
+			   <div id="FOURTHSLOT"class="slots "><button class="btn btn-outline-success">08 AM - 09 AM</button></div>		  
+			  
+			   <div id="FIFTHSLOT" class="slots "><button class="btn btn-outline-success ">09 AM - 10 AM</button></div>
+			   <div id="SIXTHSLOT" class="slots "><button class="btn btn-outline-success">10 AM - 11 AM</button></div>
+			   <div id="SEVENTHSLOT" class="slots "><button class="btn btn-outline-success">11 AM - 12 PM</button></div>
+					</div>
+			   </div>
+			   <div class="row" id="noondiv">
+					 <div id="noonicon" class="slots">
+					   
+					    <img src="/icons/noon.png"  alt="morning icon"> 
+					   
+				   </div>
+			   <div style="display:flex;justify-content:center;">
+			   <div id="EIGTHSLOT"class="slots"><button class="btn btn-outline-danger">12 PM - 01 PM</button></div>
+			   
+			   <div id="NINTHSLOT" class="slots "><button class="btn btn-outline-danger ">01 PM - 02 PM</button></div>
+				   <div id="TENTHSLOT" class="slots "><button class="btn btn-outline-secondary " disabled>02 PM - 03 PM</button></div>
+				   <div id="ELEVENTHSLOT" class="slots "><button class="btn btn-outline-secondary " disabled>03 PM - 04 PM</button></div>
+				   </div></div>
+			  \\<div id="tenth"class="slots btn btn-danger col-3 col-md-3 col-sm-4 col-xs-4">5AM - 6AM</div>
+			  <div id="eleventh"class="slots btn btn-success col-3 col-md-3 col-sm-4 col-xs-4">5AM - 6AM</div>
+			  <div id="twelveth"class="slots btn btn-success col-3 col-md-3 col-sm-4 col-xs-4">5AM - 6AM</div> -->
+		  <!-- </div>
+		 
+		  
+		  
+		  
+		  
+            </div>
+		    --> 
+		  
+		  
+            </div>
+		  </div>
+         
+	     
+	
+		  
+		  
+		
+		
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+         <div id="social">
+            <div id="icondiv">
+               <a class="callBtn smGlobalBtn" href="tel:+918939667663"></a>
+               <a class="whatsappBtn smGlobalBtn" href="whatsapp://send?text=Hi there!I would like to book a slot&phone=+918939667663
+														"></a>
+               <a class="facebookBtn smGlobalBtn" href="https://www.facebook.com/GRKs-Dirt-shine-107154547427558/"></a>
+               <a class="instagramBtn smGlobalBtn" href="https://www.instagram.com/grk_s_dtos/"></a>
+               <a class="gmailBtn smGlobalBtn" href="mailto:grkdirt2shine@gmail.com?subject=Hi there! I would like to book a slot"></a>
+            </div>
+            <div>
+               <a class="addBtn smGlobalBtn inactive" href="#"></a>
+            </div>
+         </div>
+         <div class="card contact">
+            <hr class="hr-1" style="width:90%;margin:0 auto;">
+            <div class="footer-social-icons card-body">
+               <h1 class="_14"><span id="dirt">Con</span><span id="two">t</span><span id="shine">act</span></h1>
+               <h3>
+                  ARVIND
+               </h3>
+               <h5>
+                  +91987654321
+               </h5>
+               <div class="social-icons" style="display:flex;justify-content:space-between;margin:15px auto;">
+                  <li>
+                     <a href="tel:+919952922719" class="social-icon"> <i class="fa fa-phone"></i></a>
+                  </li>
+                  <li>
+                     <a href="whatsapp://send?text=Hi there!I would like to book a slot&phone=+919952922719" class="social-icon"> <i class="fa fa-whatsapp"></i></a>
+                  </li>
+                  <li>
+                     <a href="https://www.facebook.com/" class="social-icon"> <i class="fa fa-facebook-official"></i></a>
+                  </li>
+                  <li>
+                     <a href="https://www.instagram.com/" class="social-icon"> <i class="fa fa-instagram"></i></a>
+                  </li>
+                  <li>
+                     <a href="mailto:arvindtheboss1997@gmail.com?subject=Hi there! I would like to book a slot" class="social-icon"> <i class="fa fa-envelope"></i></a>
+                  </li>
+               </div>
+            </div>
+
+         </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script>window.onload = function() {
+         $("#loading").css("display","none");
+         
+         $("#main").fadeIn("slow");
+         clearInterval(loader);
+         
+         
+         
+         };
+      </script>
+      <script src="/index.js" type="text/javascript"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+      <script src="/booknow.js" type="text/javascript" ></script>
+	   
+
+		
+   </body>
+</html>

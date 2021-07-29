@@ -1,0 +1,182 @@
+
+#social {
+  margin: 20px 10px;
+  text-align: center;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+   position: fixed;
+  bottom: 0;
+  right: 0;
+ 
+  
+}
+#icondiv{
+  display:flex;
+  flex-direction:column;
+
+}
+
+.smGlobalBtn { /* global button class */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border:2px solid #000; /* add border to the buttons */
+    box-shadow: 0 3px 3px #000;
+    padding: 0px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 2em;
+    border-radius: 27px;
+    -moz-border-radius:27px;
+    -webkit-border-radius:27px;
+	  z-index: 12;
+}
+
+/* facebook button class*/
+.facebookBtn{
+    background: #4060A5;
+}
+
+.facebookBtn:before{ /* use :before to add the relevant icons */
+    font-family: "FontAwesome";
+    content: "\f09a"; /* add facebook icon */
+}
+
+.facebookBtn:hover{
+    color: #4060A5;
+    background: #fff;
+    border-color: #4060A5; /* change the border color on mouse hover */
+}
+
+/* call button class*/
+.callBtn{
+    background: #046307;
+}
+
+.callBtn:before{
+      font-family: "FontAwesome";
+      content: "\f095"; /* add call icon */
+      
+}
+
+.callBtn:hover{
+      color: #046307;
+      background: #fff;
+      border-color: #046307;
+}
+
+/* gmail button class*/
+.gmailBtn{
+    background: #e64522;
+}
+
+.gmailBtn:before{
+      font-family: "FontAwesome";
+      content: "\f003"; /* add gmail icon */
+}
+
+.gmailBtn:hover{
+      color: #e64522;
+      background: #fff;
+      border-color: #e64522;
+}
+
+/* whatsapp button class*/
+.whatsappBtn{
+    background: #046307;
+}
+
+.whatsappBtn:before{
+      font-family: "FontAwesome";
+      content: "\f232"; /* add whatsapp icon */
+}
+
+.whatsappBtn:hover{
+      color: #046307;
+      background: #fff;
+      border-color: #046307;
+}
+
+/* instagram button class*/
+.instagramBtn{
+    background: #cb2027;
+}
+
+.instagramBtn:before{
+      font-family: "FontAwesome";
+      content: "\f16d"; /* add instagram icon */
+}
+
+.instagramBtn:hover{
+      color: #cb2027;
+      background: #fff;
+      border-color: #cb2027;
+}
+
+/* add button class*/
+.addBtn{
+    background: #FF0000;
+	transition: transform 0.5s 0s;
+	transition-timing-function:ease-in-out;
+}
+
+.addBtn:before{
+      font-family: "FontAwesome";
+      content: "\f262"; /* add tumblr icon */
+}
+
+.rotated { 
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+	
+	
+}
+
+@media(min-width:1500px){
+	.addBtn:hover{
+     text-decoration:none;
+		background: #ADA996;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: #000000;  /* fallback for old browsers */
+color: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+color: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	
+				border-color:#FF0000;
+      border-color: #FF0000;
+}
+}
+	@media(max-width:1500px){
+	.inactive{
+			text-decoration:none;
+		background: #ADA996;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: #000000;  /* fallback for old browsers */
+color: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+color: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	
+				border-color:#FF0000;
+		}	
+		a:hover{
+			text-decoration:none;
+			color:black;
+		}
+			.active{
+       text-decoration:none;
+				 color: #FF0000;
+      background: #fff;
+      border-color: #FF0000;
+}
+		
+	
+}

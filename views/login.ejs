@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Girassol&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather:900i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href='/index.css'>
+        <link rel="stylesheet" type="text/css" href='/floatingicon.css'>
+    <title>D!rt2Shine</title>
+</head>
+
+<body>
+	<div id="loading" class="card ">
+		<style>
+			#loading{
+				background-image: url('/images/background1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+	border:0px;
+			}
+		</style>
+		            <h1 id="loadingh1"> <span id="dirt">D!rt</span><span id="two">2</span><span id="shine">Shine</span></h1>
+		<p id="loadingp">
+			Don't get caught riding dirty
+		</p>
+	</div>
+	<script>
+		setInterval(function(){ 
+		if($("#dirt").text()=="D!rt"){
+			$("#dirt").text("Dirt");
+			$("#shine").text("Sh!ne");
+		}
+			else{
+				$("#dirt").text("D!rt");
+				$("#shine").text("Shine");
+			}
+		
+		
+		}, 500);
+	</script>
+	<div id="main" style="display:none;">
+	
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark customnav">
+
+            <a class="navbar-brand" href="/"><h1> <span id="dirt">D!rt</span><span id="two">2</span><span id="shine">Shine</span></h1></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+					<a class="nav-item nav-link" href="/">Home</a>
+                    <!-- <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+                   <% if(!user){  %>
+					 <a class="nav-item nav-link" href="/signup">Signup</a>
+					<%}%>
+                   
+                    
+					<% if(user){  %>
+					 <a class="nav-item nav-link" href="/logout">Logout</a>
+					<%}%>
+					<a class="nav-item nav-link" href="/about">About Us</a>
+                </div>
+            </div>
+
+        </nav>
+    </div>
+	<%if(success && success.length>0){%>
+		 <div class="alert alert-dark " role="alert" style="margin:0 0;border-radius:0px;" >			 
+				 <%= success %>		
+</div>
+		<%}%>
+			 <%if(error&& error.length>0){%>
+<div class="alert alert-danger" role="alert"style="margin:0 0;border-radius:0px;">		 
+				 <%= error %>			
+		</div>	 
+			 <%}%>
+<%if(info&& info.length>0){%>
+<div class="alert alert-primary" role="alert" style="margin:0 0;border-radius:0px;">   
+				 <%= info %>			 
+		</div>	 
+			 <%}%>
+		<%if(loginerr&& loginerr.length>0){%>
+<div class="alert alert-danger" role="alert" style="margin:0 0;border-radius:0px;">   
+				 <%= loginerr %>			 
+		</div>	 
+			 <%}%>
+<div class="card" style="margin-top:10vh;">
+	<div class="card-body">
+		 <div class="col-md-12 " style="text-align:center;margin-bottom:0;padding-bottom:0;">
+			   
+                        <h2> <span id="dirt">Lo</span><span id="two">g</span><span id="shine">in</span></h2>
+                     
+                     
+		</div>
+</div>
+   <form  style="margin:10px auto;z-index:15;" id="loginForm" method="POST" action="/login">
+  <div class="form-row">
+    <div class="col-md-12 mb-3">
+      <label for="username">Username/Email</label>
+      <input type="text" class="form-control" id="username" placeholder="User name/Email" name="username"required>
+      
+    </div>
+    
+    <div class="col-md-12 mb-3">
+       <label for="password">Password</label>
+    <input type="password"  placeholder="Password" class="form-control" aria-describedby="passwordHelpInline" name="password" required>
+        
+    </div>    
+  </div>
+  
+  <button class="btn1 btn btn-primary btn-block btn2" type="submit"><b>Submit</b></button>
+	   
+</form>
+	<div style="display:flex; margin:0 auto;">		
+	<a href="/signup"style="margin:10px 5px;">New user?</a>
+		<a href="#"style="margin:10px 1px;">/</a>
+	<a href="/forgotPassword"style="margin:10px 5px;">Forgot Password?</a>
+		</div>
+	</div>
+	
+   
+<div id="social">
+        <div id="icondiv">
+            <a class="callBtn smGlobalBtn" href="tel:+919952922719"></a>
+            <a class="whatsappBtn smGlobalBtn" href="whatsapp://send?text=Hi there!I would like to book a slot&phone=+919952922719"></a>
+            <a class="facebookBtn smGlobalBtn" href="https://www.facebook.com/"></a>
+            <a class="instagramBtn smGlobalBtn" href="https://www.instagram.com/"></a>
+            <a class="gmailBtn smGlobalBtn" href="mailto:arvindtheboss1997@gmail.com?subject=Hi there! I would like to book a slot"></a>
+        </div>
+        <div>
+            <a class="addBtn smGlobalBtn inactive" href="#"></a>
+        </div>
+    </div>	</div>
+	
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	 <script>window.onload = function() {
+			   document.getElementById("username").focus();
+		 	
+												    $("#loading").css("display","none");
+			 $("#main").fadeIn("slow");
+								
+			
+
+};</script>
+    <script src="/index.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
