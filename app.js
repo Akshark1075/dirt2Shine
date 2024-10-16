@@ -9,7 +9,7 @@ app.use(express.json({
 var methodOverride=require("method-override");
 var mongoose=require("mongoose");
 mongoose.set('useCreateIndex', true);
-mongoose.connect("mongodb+srv://dbadmin:sijinthatha123@cluster0.ii95r.mongodb.net/dirt2shine?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true});
+mongoose.connect("mongodb+srv://ak:PHyy0p0QxDcnWbv7@dirt2shine.6si1z.mongodb.net/?retryWrites=true&w=majority&appName=dirt2shine",{useNewUrlParser:true,useUnifiedTopology:true});
 var passport=require("passport");
 var LocalStrategy=require("passport-local").Strategy;
 var passportLocalMongoose=require("passport-local-mongoose");
